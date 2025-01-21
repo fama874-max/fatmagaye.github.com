@@ -1,0 +1,64 @@
+/* styles.css */
+
+/* Général */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    background-image: url('images.jfif');
+    background-size: cover; /* L'image couvre toute la page */
+    background-position: center center; /* Centre l'image */
+    color: #4b3832;
+    backdrop-filter: blur(15px); /* Applique le flou */
+}
+
+/* Header */
+header.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #6f4e37;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fdf3e7;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: #ffd700;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4b3832;
+    color: #fdf3e7;
+    font-size: 0.9rem;
+    margin-top: 350px;
+    padding-bottom: 20px;
+}
+

@@ -1,0 +1,79 @@
+/* Général */
+body {
+    margin: 0;
+    font-family: 'Roboto', sans-serif;
+    color: #4b3832;
+    /*background: linear-gradient(to bottom, #fdf3e7, #d5bba0);*/
+    background-image: url('PHOTO-2024-05-07-09-25-00.jpg');
+    background-size: cover; /* L'image couvre toute la page */
+    background-position: center center; /* Centre l'image */
+    background-attachment: fixed;
+}
+
+header.main-header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 1rem 2rem;
+    background-color: #6f4e37;
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header .logo {
+    height: 50px;
+}
+
+.navbar ul {
+    list-style: none;
+    display: flex;
+    margin: 0;
+    padding: 0;
+}
+
+.navbar ul li {
+    margin: 0 1rem;
+}
+
+.navbar ul li a {
+    text-decoration: none;
+    color: #fdf3e7;
+    font-weight: bold;
+    transition: color 0.3s ease-in-out;
+}
+
+.navbar ul li a:hover,
+.navbar ul li a.active {
+    color: #ffd700;
+}
+
+/* Hero Section */
+.hero {
+    text-align: center;
+    margin-top: 2rem;
+    position: relative;
+    padding-bottom: 2rem;
+}
+
+.hero-content h1 {
+    font-size: 2.5rem;
+    color: #6f4e37;
+    margin-bottom: 1rem;
+}
+
+.hero-content span {
+    color: #e0ac69;
+}
+
+/* Footer */
+footer {
+    text-align: center;
+    padding: 1rem;
+    background-color: #4b3832;
+    color: #fdf3e7;
+    font-size: 0.9rem;
+    margin-top: 350px;
+    padding-bottom: 20px;
+}
