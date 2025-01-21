@@ -1,0 +1,371 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kay Gnou Wakhtane Sunna - Bienvenue sur notre site officiel">
+    <title>Kay Gnou Wakhtane Sunna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #3b2416; /* Marron très foncé */
+            --secondary-color: #4b3832; /* Marron foncé */
+            --accent-color: #854442; /* Marron accent */
+            --background-color: #fdf3e7; /* Beige clair */
+            --text-color: #3b2416; /* Marron foncé pour le texte */
+            --light-color: #fdf3e7; /* Beige très clair */
+            --transition: all 0.3s ease-in-out;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            overflow-x: hidden;
+            background-color: var(--background-color);
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        /* Header identique à organisation.html */
+        .header {
+            background: rgba(59, 36, 22, 0.95);
+            position: fixed;
+            width: 100%;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--accent-color);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        /* Hero Section avec nouveau style */
+        .hero {
+            height: 100vh;
+            position: relative;
+            background: linear-gradient(rgba(59, 36, 22, 0.8), rgba(59, 36, 22, 0.8)),
+                        url('path/to/your/hero-image.jpg') center/cover no-repeat;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            padding-top: 80px;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 2rem;
+            animation: fadeInUp 1s ease-out;
+        }
+
+        .hero h1 {
+            color: var(--light-color);
+            font-size: clamp(2rem, 5vw, 4rem);
+            margin-bottom: 1.5rem;
+            line-height: 1.2;
+        }
+
+        .hero h1 span {
+            color: var(--background-color);
+            display: block;
+            font-size: clamp(1.5rem, 4vw, 3rem);
+            margin-top: 0.5rem;
+        }
+
+        .hero-text {
+            color: var(--light-color);
+            font-size: 1.2rem;
+            margin-bottom: 2rem;
+        }
+
+        .hero-buttons {
+            display: flex;
+            gap: 1.5rem;
+            justify-content: center;
+            margin-top: 2rem;
+        }
+
+        .hero-btn {
+            padding: 1rem 2rem;
+            border: none;
+            border-radius: 50px;
+            font-size: 1.1rem;
+            font-weight: 500;
+            text-decoration: none;
+            transition: var(--transition);
+            cursor: pointer;
+        }
+
+        .primary-btn {
+            background: var(--accent-color);
+            color: var(--light-color);
+        }
+
+        .primary-btn:hover {
+            background: var(--secondary-color);
+            transform: translateY(-3px);
+        }
+
+        .secondary-btn {
+            background: transparent;
+            color: var(--light-color);
+            border: 2px solid var(--light-color);
+        }
+
+        .secondary-btn:hover {
+            background: rgba(255, 255, 255, 0.1);
+            transform: translateY(-3px);
+        }
+
+        /* Features Section avec nouveau style */
+        .features {
+            padding: 4rem 0;
+            background: var(--background-color);
+        }
+
+        .features-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            padding: 2rem 0;
+        }
+
+        .feature-card {
+            background: #fff;
+            padding: 2.5rem;
+            border-radius: 12px;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+            text-align: center;
+            cursor: pointer;
+            text-decoration: none;
+            border: 2px solid transparent;
+        }
+
+        .feature-card:hover {
+            transform: translateY(-10px);
+            border-color: var(--accent-color);
+            background: var(--background-color);
+        }
+
+        .feature-icon {
+            font-size: 2.5rem;
+            color: var(--accent-color);
+            margin-bottom: 1.5rem;
+        }
+
+        .feature-card h3 {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+        }
+
+        .feature-card p {
+            color: var(--text-color);
+            font-size: 1rem;
+            line-height: 1.6;
+        }
+
+        /* Footer avec nouveau style */
+        .footer {
+            background: var(--primary-color);
+            color: var(--light-color);
+            padding: 1.5rem 0;
+            text-align: center;
+        }
+
+        .footer p {
+            opacity: 0.9;
+        }
+
+        /* Mobile Menu */
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+            color: var(--light-color);
+            font-size: 1.5rem;
+        }
+
+        /* Media Queries */
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: var(--primary-color);
+                padding: 2rem;
+                width: 80%;
+                height: calc(100vh - 80px);
+                transition: var(--transition);
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav-link {
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .hero-buttons {
+                flex-direction: column;
+                padding: 0 2rem;
+            }
+
+            .features-grid {
+                grid-template-columns: 1fr;
+                padding: 2rem 1rem;
+            }
+        }
+
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <img src="images.jfif" alt="Logo Kay Gnou Wakhtane Sunna" class="logo">
+            <nav class="nav">
+                <a href="index.html" class="nav-link active">Accueil</a>
+                <a href="presentation.html" class="nav-link">Présentation</a>
+                <a href="organisation.html" class="nav-link">Organisation</a>
+                <a href="realisations.html" class="nav-link">Réalisations</a>
+                <a href="aide.html" class="nav-link">Comment nous aider</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+
+    <main>
+        <section class="hero">
+            <div class="hero-content">
+                <h1>Bienvenue sur<span>Kay Gnou Wakhtané Sunna</span></h1>
+                <p class="hero-text">Exclusivement réservé à l'enseignement islamique</p>
+                <div class="hero-buttons">
+                    <a href="presentation.html" class="hero-btn primary-btn">Présentation</a>
+                    <a href="contact.html" class="hero-btn secondary-btn">Nous Contacter</a>
+                </div>
+            </div>
+        </section>
+
+        <section class="features">
+            <div class="container">
+                <div class="features-grid">
+                    <a href="organisation.html" class="feature-card">
+                        <div class="feature-icon">🏢</div>
+                        <h3>Organisation</h3>
+                        <p>Découvrez notre structure et notre fonctionnement</p>
+                    </a>
+                    <a href="realisations.html" class="feature-card">
+                        <div class="feature-icon">🌟</div>
+                        <h3>Réalisations</h3>
+                        <p>Explorez nos accomplissements</p>
+                    </a>
+                    <a href="aide.html" class="feature-card">
+                        <div class="feature-icon">🤝</div>
+                        <h3>Aide</h3>
+                        <p>Apprenez comment vous pouvez contribuer</p>
+                    </a>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy;  Kay Gnou Wakhtané Sunna. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('.nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenu.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+</html>

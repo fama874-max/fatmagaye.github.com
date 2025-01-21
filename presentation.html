@@ -1,0 +1,343 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kay Gnou Wakhtane Sunna - Présentation de notre association">
+    <title>Présentation - Kay Gnou Wakhtane Sunna</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4b3832;
+            --secondary-color: #854442;
+            --text-color: #7a5230;
+            --light-color: #fdf3e7;
+            --transition: all 0.3s ease-in-out;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: linear-gradient(#fdf3e7, #fdf3e7);
+            min-height: 100vh;
+            display: grid;
+            grid-template-rows: auto 1fr auto;
+        }
+
+        .container {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 0 1rem;
+            width: 100%;
+        }
+
+        .header {
+            background: rgba(75, 56, 50, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            object-fit: cover;
+            border-radius: 50%;
+            transition: var(--transition);
+        }
+
+        .logo:hover {
+            transform: scale(1.05);
+        }
+
+        .nav {
+            display: flex;
+            gap: 1.5rem;
+        }
+
+        .nav-link {
+            color: var(--light-color);
+            text-decoration: none;
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+            border-radius: 4px;
+            transition: var(--transition);
+            position: relative;
+        }
+
+        .nav-link::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            width: 0;
+            height: 2px;
+            background: var(--secondary-color);
+            transition: var(--transition);
+            transform: translateX(-50%);
+        }
+
+        .nav-link:hover::after,
+        .nav-link.active::after {
+            width: 100%;
+        }
+
+        .mobile-menu {
+            display: none;
+            cursor: pointer;
+        }
+
+        .main {
+            padding: 4rem 0;
+        }
+
+        .section {
+            background: rgba(255, 255, 255, 0.95);
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            text-align: center;
+            position: relative;
+            padding-bottom: 0.5rem;
+        }
+
+        .section-title::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 60px;
+            height: 3px;
+            background: var(--secondary-color);
+        }
+
+        .presentation-text {
+            max-width: 800px;
+            margin: 0 auto;
+            font-size: 1.1rem;
+            line-height: 1.8;
+        }
+
+        .content-section {
+            margin-bottom: 3rem;
+            padding: 0 1.5rem;
+        }
+
+        .section-subtitle {
+            color: var(--primary-color);
+            font-size: 1.5rem;
+            margin: 2.5rem 0 1.5rem;
+            padding-bottom: 0.5rem;
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .presentation-text p {
+            margin-bottom: 1.5rem;
+            color: #333;
+        }
+
+        .presentation-text ul {
+            list-style: none;
+            padding: 0;
+            margin: 2rem 0;
+        }
+
+        .presentation-text li {
+            position: relative;
+            padding-left: 1.5rem;
+            margin-bottom: 1.5rem;
+        }
+
+        .presentation-text li::before {
+            content: '•';
+            position: absolute;
+            left: 0;
+            color: var(--secondary-color);
+        }
+
+        .quote {
+            background-color: rgba(133, 68, 66, 0.1);
+            border-left: 4px solid var(--secondary-color);
+            padding: 1.5rem;
+            margin: 1rem 0;
+            border-radius: 0 8px 8px 0;
+            font-style: italic;
+            color: #555;
+        }
+
+        .video-container {
+            position: relative;
+            max-width: 640px;
+            margin: 3rem auto;
+            padding-bottom: 45%;
+        }
+
+        .video-container iframe {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            border-radius: 12px;
+        }
+
+        .footer {
+            background: rgba(75, 56, 50, 0.95);
+            color: var(--light-color);
+            padding: 1rem 0;
+            text-align: center;
+            margin-top: auto;
+        }
+
+        @media (max-width: 768px) {
+            .mobile-menu {
+                display: block;
+            }
+
+            .nav {
+                position: fixed;
+                top: 80px;
+                right: -100%;
+                flex-direction: column;
+                background: rgba(75, 56, 50, 0.98);
+                padding: 2rem;
+                width: 80%;
+                height: calc(100vh - 80px);
+                transition: var(--transition);
+            }
+
+            .nav.active {
+                right: 0;
+            }
+
+            .nav-link {
+                padding: 1rem;
+                width: 100%;
+                text-align: center;
+            }
+
+            .presentation-text {
+                font-size: 1rem;
+                padding: 0 1rem;
+            }
+
+            .video-container {
+                padding-bottom: 56.25%;
+            }
+
+            .content-section {
+                padding: 0 1rem;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="container header-content">
+            <img src="images.jfif" alt="Logo Kay Gnou Wakhtane Sunna" class="logo">
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="presentation.html" class="nav-link active">Présentation</a>
+                <a href="organisation.html" class="nav-link">Organisation</a>
+                <a href="realisations.html" class="nav-link">Réalisations</a>
+                <a href="aide.html" class="nav-link">Comment nous aider</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+            <div class="mobile-menu">☰</div>
+        </div>
+    </header>
+
+    <main class="main">
+        <div class="container">
+            <section class="section">
+                <h1 class="section-title">Présentation de Kay Gnou Wakhtane Sunna</h1>
+                
+                <div class="presentation-text">
+                    <div class="content-section">
+                        <p>Par la grâce d'Allah, le Groupe Kay Gnou Wakhtané Sunna a été créé le 02 Septembre 2021 par Sokhna Ndiémé Mbengue, qui en est la Présidente.</p>
+                        <p>Actuellement, le groupe compte environ 2135 membres.</p>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-subtitle">Nos Objectifs Principaux</h2>
+                        <ul>
+                            <li>Promouvoir l'Islam et la pratique de la Sunna laisser par Notre Bien Aimé Mouhamad Aleyhi Salatu Wasalam.</li>
+                            <div class="quote">
+                                << Nul malheur n'atteint [l'homme] que par la permission d'ALLAH. Et quiconque croit en ALLAH, [ALLAH] guide son cœur. ALLAH est omniscient. Obéissez à ALLAH et obéissez au Messager Et si vous vous détourner… Il n'incombe à Notre Messager que de transmettre en clair (son message).>> 
+                                <br><br>- Sourate 64 Versets 11-12
+                            </div>
+                            <li>Exhorter et sensibiliser nos sœurs en ALLAH Subhanahu Watallah à mettre le voile, et apprendre la religion selon les préceptes de l'Islam.</li>
+                            <li>Lutter contre la dévalorisation et la manipulation des femmes au sein de la société.</li>
+                        </ul>
+                    </div>
+
+                    <div class="content-section">
+                        <h2 class="section-subtitle">Kay Gnou Wakhtané Sunna-SOCIAL</h2>
+                        <p>En Septembre 2023, avec l'aide du BON DIEU, nous avons étendu notre mission au volet SOCIAL. Cette nouvelle branche poursuit les objectifs suivants :</p>
+                        <ul>
+                            <li>Inciter les musulmans à donner la Zakat et faire l'aumône envers les nécessiteux.</li>
+                            <div class="quote">
+                                << Vous n'atteindrez la vraie piété qu'en faisant aumône d'une part des biens que vous aimez. Et quelque aumône que vous fassiez, ALLAH en est parfaitement informé.>>
+                                <br><br>- Sourate 3 Verset 92
+                            </div>
+                            <li>Lutter contre l'inégalité sociale causée par la cherté de la vie.</li>
+                            <li>Aider des personnes ou familles nécessiteuses à satisfaire leurs besoins primaires.</li>
+                        </ul>
+                    </div>
+
+                    <div class="video-container">
+                        <iframe src="https://www.youtube.com/embed/63fXpuEA2Do?si=SF_XJrlnva0DzZyI" 
+                                title="YouTube video player" 
+                                frameborder="0" 
+                                allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" 
+                                allowfullscreen></iframe>
+                    </div>
+                </div>
+            </section>
+        </div>
+    </main>
+
+    <footer class="footer">
+        <div class="container">
+            <p>&copy; Kay Gnou Wakhtané Sunna. Tous droits réservés.</p>
+        </div>
+    </footer>
+
+    <script>
+        const mobileMenu = document.querySelector('.mobile-menu');
+        const nav = document.querySelector('.nav');
+
+        mobileMenu.addEventListener('click', () => {
+            nav.classList.toggle('active');
+            mobileMenu.textContent = nav.classList.contains('active') ? '✕' : '☰';
+        });
+    </script>
+</body>
+</html>

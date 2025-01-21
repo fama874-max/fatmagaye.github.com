@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Kay Gnou Wakhtane Sunna - Nos réalisations et impacts dans la communauté">
+    <title>Réalisations - Kay Gnou Wakhtane Sunna</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        :root {
+            --primary-color: #4b3832;
+            --secondary-color: #854442;
+            --text-color: #7a5230;
+            --light-color: #fdf3e7;
+            --transition: all 0.3s ease-in-out;
+            --shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+            --container-width: 1200px;
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Poppins', sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background: var(--light-color);
+        }
+
+        .header {
+            background: rgba(75, 56, 50, 0.95);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            backdrop-filter: blur(10px);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 1rem 0;
+            max-width: var(--container-width);
+            margin: 0 auto;
+        }
+
+        .logo {
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+        }
+
+        .nav-link {
+            color: var(--light-color);
+            text-decoration: none;
+            padding: 0.5rem 1rem;
+        }
+
+        .nav-link.active {
+            border-bottom: 2px solid var(--secondary-color);
+        }
+
+        .main {
+            max-width: var(--container-width);
+            margin: 2rem auto;
+            padding: 0 1rem;
+        }
+
+        .section {
+            background: white;
+            border-radius: 12px;
+            padding: 2rem;
+            margin-bottom: 2rem;
+            box-shadow: var(--shadow);
+        }
+
+        .section-title {
+            color: var(--primary-color);
+            font-size: 2rem;
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .realisation-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            margin: 2rem 0;
+        }
+
+        .realisation-item {
+            background: white;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: var(--transition);
+        }
+
+        .realisation-item:hover {
+            transform: translateY(-5px);
+        }
+
+        .realisation-img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .realisation-content {
+            padding: 1rem;
+        }
+
+        .realisation-title {
+            color: var(--primary-color);
+            margin-bottom: 0.5rem;
+            font-size: 1.2rem;
+        }
+
+        .realisation-list {
+            list-style-type: none;
+            padding: 0;
+        }
+
+        .realisation-list li {
+            margin-bottom: 0.5rem;
+            padding-left: 1.2rem;
+            position: relative;
+        }
+
+        .realisation-list li::before {
+            content: "•";
+            color: var(--secondary-color);
+            position: absolute;
+            left: 0;
+        }
+
+        .footer {
+            background: rgba(75, 56, 50, 0.95);
+            color: var(--light-color);
+            text-align: center;
+            padding: 1rem;
+            margin-top: 2rem;
+        }
+
+        @media (max-width: 768px) {
+            .realisation-grid {
+                grid-template-columns: 1fr;
+            }
+        }
+    </style>
+</head>
+<body>
+    <header class="header">
+        <div class="header-content">
+            <img src="images.jfif" alt="Logo Kay Gnou Wakhtane Sunna" class="logo">
+            <nav class="nav">
+                <a href="index.html" class="nav-link">Accueil</a>
+                <a href="presentation.html" class="nav-link">Présentation</a>
+                <a href="organisation.html" class="nav-link">Organisation</a>
+                <a href="realisations.html" class="nav-link active">Réalisations</a>
+                <a href="aide.html" class="nav-link">Comment nous aider</a>
+                <a href="contact.html" class="nav-link">Contact</a>
+            </nav>
+        </div>
+    </header>
+
+    <main class="main">
+        <section class="section">
+            <h1 class="section-title">Nos Réalisations</h1>
+            
+            <div class="realisation-grid">
+                <div class="realisation-item">
+                    <img src="PHOTO-2024-08-30-20-33-03.jpg" alt="Construction de puits" class="realisation-img">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Accès à l'Eau</h3>
+                        <p>Construction de 9 puits dans différentes régions du pays pour améliorer l'accès à l'eau potable.</p>
+                    </div>
+                </div>
+
+                <div class="realisation-item">
+                    <img src="PHOTO-2024-10-10-23-00-56.jpg" alt="Distribution de denrées" class="realisation-img">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Aide Alimentaire Ramadan 2024</h3>
+                        <ul class="realisation-list">
+                            <li>143 familles ont reçu des kits alimentaires</li>
+                            <li>Chaque kit contient: 25kg de riz parfumé, sucre, 5L d'huile</li>
+                            <li>Budget total: 3.400.000 FCFA</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="realisation-item">
+                    <img src="PHOTO-2024-10-09-11-42-41.jpg" alt="Séminaires et formations" class="realisation-img">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Séminaires et Formations</h3>
+                        <p>Organisation de séminaires et formations dans les régions de Djolof, Casamance et Mbour.</p>
+                    </div>
+                </div>
+
+                <div class="realisation-item">
+                    <img src="PHOTO-2024-05-07-10-43-24.jpg" alt="Aide médicale" class="realisation-img">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Aide Médicale</h3>
+                        <p>Assistance à environ 60 patients dans différents hôpitaux et cliniques privées du pays.</p>
+                    </div>
+                </div>
+
+                <div class="realisation-item">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Soutien aux Daaras</h3>
+                        <ul class="realisation-list">
+                            <li>1.000.000 FCFA pour la réfection du Daara Kamil à Vélingara</li>
+                            <li>1.200.000 FCFA pour un daara à Touba Moudié (Sédhiou)</li>
+                            <li>500.000 FCFA + 1200 Kamils pour un daara à Kaolack</li>
+                            <li>7.500.000 FCFA pour la construction du Daara Omar Ibn Khattab à Yeumbeul</li>
+                            <li>Don de 800+ livres coraniques dans différentes régions</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="realisation-item">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Aide aux Fêtes Religieuses</h3>
+                        <ul class="realisation-list">
+                            <li>Korité: Distribution de 590.000 FCFA aux secteurs de Mbao, Keur Mbaye Fall, HLM et Yeumbeul</li>
+                            <li>Tabaski: Distribution d'enveloppes de 500.000 FCFA aux familles nécessiteuses</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="realisation-item">
+                    <div class="realisation-content">
+                        <h3 class="realisation-title">Aide Sociale Continue</h3>
+                        <ul class="realisation-list">
+                            <li>Paiement d'ordonnances médicales</li>
+                            <li>Aide au loyer pour des familles</li>
+                            <li>Règlement de dettes</li>
+                            <li>Paiement de factures d'eau et d'électricité pour des familles, mosquées et daaras</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer class="footer">
+        <p>&copy; Kay Gnou Wakhtané Sunna. Tous droits réservés.</p>
+    </footer>
+</body>
+</html>
